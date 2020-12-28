@@ -1,81 +1,77 @@
-function isAdult(age) {
-  return age >= 18 ? true : false;
+function showDecreasingNumber1 (num) {
+  let count = num;
+   while (count >=0) {
+     console.log(num);
+     num--;
+   }
 }
-
-function checkMultiplicity(num1, num2) {
-  return num1 % num2 === 0 ? true : false;
-}
-
-function isTriangle(sideA, sideB, sideC) {
-  if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
-    return false;
+function showDecreasingNumber2(num) {
+  for (let i = num; i >= 0; i-- ) {
+    console.log(i);
   }
-  const sumOfOppositeA = sideB + sideC;
-  const sumOfOppositeB = sideA + sideC;
-  const sumOfOppositeC = sideA + sideB;
-  if (sideA >= sideB && sideA >= sideC) {
-    if (sideA < sumOfOppositeA) {
-      return true;
+}
+function showDecreasingNumber3 (num) {
+  let count = num;
+  do {
+    console.log(count);
+    count --;
+  } while (count >=0);
+}
+
+
+function getMultiples1 (numBegin, numEnd, divider) {
+  let count = numBegin;
+  while (count <= numEnd) {
+    if (count % divider === 0) {
+      console.log (count);
     }
-    return false;
+    count++;
   }
-  if (sideB >= sideA && sideB >= sideC) {
-    if (sideB < sumOfOppositeB) {
-      return true;
+}
+function getMultiples2 (numBegin, numEnd, divider) {
+  let count = numBegin;
+  do {
+    if (count % divider === 0) {
+      console.log (count);
     }
-    return false;
-  }
-  if (sideC >= sideA && sideC >= sideB) {
-    if (sideC < sumOfOppositeC) {
-      return true;
+    count++;
+  } while (count <=numEnd);
+}
+function getMultiples3 (numBegin, numEnd, divider) {
+  for(let count = numBegin; count <= numEnd; count++) {
+    if (count % divider === 0) {
+      console.log(count);
     }
-    return false;
   }
 }
 
-function getRhombusArea1(side, heignt) {
-  if (side <= 0 || heignt <= 0) {
-    return null;
+function getSum (numBegin, numEnd) {
+  let count = numBegin;
+  let result = 0;
+  while (count <= numEnd) {
+    result += count;
+    count++;
   }
-  const result = side * heignt;
   return result;
 }
-function getRhombusArea2(diagonal1, diagonal2) {
-  if (diagonal1 <= 0 || diagonal2 <= 0) {
-    return null;
+function getSum2 (numBegin, numEnd) {
+  let result = 0;
+  for (let count = numBegin; count <= numEnd; count++) {
+    result += count;
   }
-  const result = (1 / 2) * diagonal1 * diagonal2;
-  return result;
-}
-
-function getCylinderArea(radius, height) {
-  if (radius <= 0 || heignt <= 0) {
-    return null;
-  }
-  const sideArea = 2 * Math.PI * radius * height;
-  const baseArea = Math.PI * radius ** 2;
-  const result = sideArea + 2 * baseArea;
   return result;
 }
 
-function getTriangleArea(sideA, sideB, sideC) {
-  if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
-    return null;
-  }
-  const semiperimeter = (sideA + sideB + sideC) / 2;
-  const result =
-    (semiperimeter *
-      (semiperimeter - sideA) *
-      (semiperimeter - sideB) *
-      (semiperimeter - sideC)) **
-    (1 / 2);
-  return result;
-}
 
-function getRectangleArea(side1, side2) {
-  if (side1 <= 0 || side2 <= 0) {
-    return null;
-  }
-  result = side1 * side2;
-  return result;
-}
+ function solveTask () {
+  let count = 0; 
+  while (count < 20) {
+     const userInput = +prompt ('Реши пример: (2+2*2)');
+     if (userInput === 6) {
+       break;
+     }
+     count++;
+   }
+ }
+
+
