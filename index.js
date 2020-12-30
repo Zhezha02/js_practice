@@ -1,77 +1,28 @@
-function showDecreasingNumber1 (num) {
-  let count = num;
-   while (count >=0) {
-     console.log(num);
-     num--;
-   }
+function Relative (nameOfRelative, age, sex, isMarried, favouriteColor ) {
+  this.age = age;
+  if(isNaN(age)){
+    this.age = +prompt(`Введите возраст члена семьи ${nameOfRelative} числом!!!`)
+  }
+  
+  this.sex = sex;
+  this.isMarried = (isMarried === '+' ? true : false);
+  this.favouriteColor = favouriteColor;
 }
-function showDecreasingNumber2(num) {
-  for (let i = num; i >= 0; i-- ) {
-    console.log(i);
+
+function Family () {
+  let relativesNumber = +prompt('Сколько у вас членов семьи?');
+  while (isNaN(relativesNumber)) {
+    relativesNumber = +prompt('Не верно, введите числом количество родственников!');
+  }
+
+  for (let i = 0; i < relativesNumber ; i++) {
+    const nameOfRelative = prompt('Введите имя родственника');
+    const age = +prompt(`Введите возраст члена семьи ${nameOfRelative}`);
+    const sex = prompt(`Введите пол члена семьи ${nameOfRelative}`);
+    const isMarried = prompt(`Женат(а) ли член семьи ${nameOfRelative} (+, -)`);
+    const favouriteColor = prompt(`Введите любимый цвет члена семьи ${nameOfRelative}`);
+
+     this[nameOfRelative] = new Relative (nameOfRelative, age, sex, isMarried, favouriteColor);
   }
 }
-function showDecreasingNumber3 (num) {
-  let count = num;
-  do {
-    console.log(count);
-    count --;
-  } while (count >=0);
-}
-
-
-function getMultiples1 (numBegin, numEnd, divider) {
-  let count = numBegin;
-  while (count <= numEnd) {
-    if (count % divider === 0) {
-      console.log (count);
-    }
-    count++;
-  }
-}
-function getMultiples2 (numBegin, numEnd, divider) {
-  let count = numBegin;
-  do {
-    if (count % divider === 0) {
-      console.log (count);
-    }
-    count++;
-  } while (count <=numEnd);
-}
-function getMultiples3 (numBegin, numEnd, divider) {
-  for(let count = numBegin; count <= numEnd; count++) {
-    if (count % divider === 0) {
-      console.log(count);
-    }
-  }
-}
-
-function getSum (numBegin, numEnd) {
-  let count = numBegin;
-  let result = 0;
-  while (count <= numEnd) {
-    result += count;
-    count++;
-  }
-  return result;
-}
-function getSum2 (numBegin, numEnd) {
-  let result = 0;
-  for (let count = numBegin; count <= numEnd; count++) {
-    result += count;
-  }
-  return result;
-}
-
-
- function solveTask () {
-  let count = 0; 
-  while (count < 20) {
-     const userInput = +prompt ('Реши пример: (2+2*2)');
-     if (userInput === 6) {
-       break;
-     }
-     count++;
-   }
- }
-
-
+const family = new Family();
